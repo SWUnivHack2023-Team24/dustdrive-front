@@ -1,25 +1,83 @@
 <script>
+    import { swipe } from "svelte-gestures";
+    import { goto } from "$app/navigation";
+    import { fade } from "svelte/transition";
+
+    const messages = [
+        {
+            header: ["오랜시간 함께한", "나의 경유차를 타고"] 
+        },
+        {
+            header: "내가 원하는 날짜에, 원하는 지역으로"
+        },
+        {
+            header: "제약없이 자유롭게!"
+        }
+    ];
+    let splashStep = undefined;
+    let currentIndex = 0
+
+    function isFirstIndex(currentIndex) {
+        if (currentIndex !== 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function isLastIndex(currentIndex, contents) {
+        if (currentIndex + 1 !== contents.length) {
+            return false
+        } else {
+            return true;
+        }
+    }
+
+    function afterSwiped(event) {
+        if (event.detail.direction === "right") {
+            if (!isFirstIndex(currentIndex)) {
+                currentIndex--;
+            }
+        } else if (event.detail.direction === "left") {
+            if (!isLastIndex(currentIndex, messages)) {
+                currentIndex++;
+            } else {
+                goto("carNumberInput");  
+            }
+        }
+    }
+
     
 </script>
 
 <svelte:head>
-    <title>Info DustDrive: 환영합니다</title>
+    <title>Yellow Calendar: 환영합니다</title>
 </svelte:head>
 
-<h1>Info DustDrive</h1>
-<p>노후 경유차, 아직 바꿀 수 없다면</p>
-
-<form name="inputCar">
-    <input type="text" name="carNumber" />
-    <input type="submit" value="저장하고 확인하기" />
-</form>
-
-<dialog>
-    <p>이 웹사이트는 쿠키를 사용합니다. 자동차 번호를 저장하고 계속하시려면 쿠키를 허용해주세요. 거부하신 경우, 서비스 이용 시마다 입력이 필요합니다. 이 설정은 하단 메뉴에서 변경하실 수 있습니다.</p>
-    <button>허용</button>
-    <button>거부</button>
-</dialog>
+<main use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-y' }} on:swipe={afterSwiped}>
+    {#key currentIndex}
+    <section bind:this={splashStep} class="showElement" in:fade>
+        <h2>
+            {#if typeof messages[currentIndex].header === "object"}
+                {#each messages[currentIndex].header as text}
+                    {text}<br>
+                {/each}
+            {:else}
+                {messages[currentIndex].header}    
+            {/if}
+        </h2>
+    </section>
+    {/key}
+</main>
 
 <style>
-    
+    main {
+        font-family: "Pretendard Variable", sans-serif;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
 </style>
