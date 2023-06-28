@@ -779,6 +779,7 @@ __metadata:
     "@sveltejs/kit": ^1.20.4
     svelte: ^4.0.0
     svelte-check: ^3.4.3
+    svelte-gestures: ^1.5.2
     typescript: ^5.0.0
     vite: ^4.3.6
   languageName: unknown
@@ -2037,6 +2038,13 @@ __metadata:
   bin:
     svelte-check: bin/svelte-check
   checksum: 64000f22eb9a9d1495bc37a0698deef7a422d81c5f84df4cb296811c814324475f2885dc6345fee913cd6a4b33b472752740831fcd2f840679f927b1d3027802
+  languageName: node
+  linkType: hard
+
+"svelte-gestures@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "svelte-gestures@npm:1.5.2"
+  checksum: 248b18c765c45c25c812287f51483ae63b95f18dcb264edb17b0c613fae6cde74e0331c3dcddc23a23c135cdc36e229221694fd7c58c822a69f512ea327dde66
   languageName: node
   linkType: hard
 
