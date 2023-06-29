@@ -56,7 +56,7 @@
         <img src="/icons/goNextOrange.svg" alt="graphic" />
     </section>
     <section id="operateInfo">
-        <a href="" id="operateDay" class="card">
+        <a href="/main/availableDay" id="operateDay" class="card">
             <div>
                 <p>
                     MY 옐로카<br>
@@ -86,16 +86,6 @@
 </main>
 
 <style>
-
-    :global(html) {
-        height: 100%;
-
-        background: #F6F6F6;
-        padding: 1em;
-        margin: 0;
-        font-family: "Pretendard Variable", sans-serif;
-    }
-
     header h1 {
         font-size: 1.2em;
         font-weight: 700;
