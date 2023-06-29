@@ -71,7 +71,7 @@
             </div>
             <img src="icons/goNext.svg" alt="graphic" />
         </a>
-        <a href="" id="fixOrLimit" class="card">
+        <a href="/main/fixOrLimit" id="fixOrLimit" class="card">
             <div>
                 <p>
                     MY 옐로카<br>
@@ -79,7 +79,7 @@
                     찾아보기
                     <span>
                         나와 가까운 곳에 위치한 수리센터를 찾아드려요 :&#41;
-                    </span>        
+                    </span>  
                 </p>
             </div>
             <img src="icons/goNext.svg" alt="graphic" />
