@@ -2,6 +2,7 @@
     import { swipe } from "svelte-gestures";
     import { goto } from "$app/navigation";
     import { fade } from "svelte/transition";
+    import Indicator from "../components/Indicator.svelte";
 
     const messages = [
         {
@@ -67,6 +68,7 @@
             {/if}
         </h2>
     </section>
+    <Indicator indicateLength={messages.length} currentDot={currentIndex} />
     {/key}
 </main>
 
@@ -79,5 +81,9 @@
         justify-content: center;
         align-items: center;
         height: 90vh;
+    }
+
+    h2 {
+        height: 3em;
     }
 </style>
