@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
             ["svelte-gestures", "npm:1.5.2"],\
             ["svelte-weather", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6"],\
-            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["vite", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:4.3.9"]\
           ],\
           "linkType": "SOFT"\
@@ -1021,7 +1021,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
             ["svelte-gestures", "npm:1.5.2"],\
             ["svelte-weather", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6"],\
-            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["vite", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:4.3.9"]\
           ],\
           "linkType": "SOFT"\
@@ -2381,7 +2381,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sade", "npm:1.8.1"],\
             ["svelte", "npm:4.0.0"],\
             ["svelte-preprocess", "virtual:d728d87f2bb14b545dcc0063c9933f31ebaac679c9c87893e26d9c168b0bb6a2c6b4cb2ffb76c908a4af244cd2e211eb40c16a8cbb6fec386a9ffb1c84b3fff3#npm:5.0.4"],\
-            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/svelte",\
@@ -2458,7 +2458,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["stylus", null],\
             ["sugarss", null],\
             ["svelte", "npm:4.0.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@babel/core",\
@@ -2543,10 +2543,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["typescript", [\
-        ["patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-5355ebbe75-33020c886b.zip/node_modules/typescript/",\
+        ["patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-a7053506ec-12ff5d1488.zip/node_modules/typescript/",\
           "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "linkType": "HARD"\
         }]\
