@@ -107,7 +107,8 @@
         <ul>
             {#each positions as item}
             <li>
-                <p><span class="carTitle">{item.title}</span> <span class="carTel">{item.tel}</span></p>
+                <p><span class="carTitle">{item.title}</span></p>
+                <p><span class="carTel">{item.tel}</span></p>
                 <p class="carAddress">{item.address}</p>
             </li>
             {/each}
