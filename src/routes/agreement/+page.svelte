@@ -158,12 +158,12 @@
     }
 
     footer {
-        align-items: center;
+        align-items:last baseline;
     }
 
     main {
         font-family: "Pretendard Variable", sans-serif;
-        height: 65vh;
+        height: 60vh;
     }
 
     section {
