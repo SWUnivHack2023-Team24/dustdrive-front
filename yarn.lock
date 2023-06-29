@@ -169,25 +169,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@event-calendar/core@npm:^1.5.0, @event-calendar/core@npm:~1.5.0":
-  version: 1.5.0
-  resolution: "@event-calendar/core@npm:1.5.0"
-  dependencies:
-    svelte: ^3.59.1
-  checksum: 8a4df06f49ca787a62768ad0c36b9a0da3233ca69650bdabc32607ecab055606e3316474e2eb14b6f65d4f292625eef4ffe8a9c1edec9cdf5bdd7568896c7a88
-  languageName: node
-  linkType: hard
-
-"@event-calendar/day-grid@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@event-calendar/day-grid@npm:1.5.0"
-  dependencies:
-    "@event-calendar/core": ~1.5.0
-    svelte: ^3.59.1
-  checksum: 6be51188c082b5b598c5c893c2696d13e215c52ad3c957ce91b74111c3c78335e18ab31e6b517c3729af72cf3d02f01e000c42b5668025dbaf81a123ea09f869
-  languageName: node
-  linkType: hard
-
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -773,8 +754,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dustdrive-front@workspace:."
   dependencies:
-    "@event-calendar/core": ^1.5.0
-    "@event-calendar/day-grid": ^1.5.0
     "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.20.4
     fluent-svelte: ^1.6.0
@@ -2130,13 +2109,6 @@ __metadata:
   peerDependencies:
     svelte: ^3.54.0 || ^4.0.0
   checksum: 0208414ce1237535ee6c9f40e69a85be43fb6fe9ea6196b1ed75783744a7e27be59a3cffb97b37277c15a06c635069a196534fe07cd2d516149162ba6ccf824d
-  languageName: node
-  linkType: hard
-
-"svelte@npm:^3.59.1":
-  version: 3.59.2
-  resolution: "svelte@npm:3.59.2"
-  checksum: 3e9d770292ab5a0061ff2d3a6f77b323014399de7458371ab507465f9860d04d0c8c7a50239d15c78b920cd42065953e3c4a36abb69a2285c52c825017621444
   languageName: node
   linkType: hard
 
