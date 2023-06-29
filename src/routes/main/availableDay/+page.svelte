@@ -22,10 +22,10 @@
         <p><span class="normal"/>보통 <span class="bad"/>나쁨</p>
     </section>
     <section class="tip" id="finedustWarning">
-        <p>
+        <a href="/main/limitStates">
             미세먼지 농도가 나쁨일 때 운행할 경우<br>
             10만원 이상의 벌금이 부과됩니다.
-        </p>
+        </a>
     </section>
 </main>
 
@@ -87,8 +87,13 @@
     }
 
     #finedustWarning {
+        padding: 1em 1.4em;
         background: #F05F3F;
+    }
+    
+    #finedustWarning a {
         color: #FFFFFF;
+        text-decoration: none;
     }
 
     #calendar {
