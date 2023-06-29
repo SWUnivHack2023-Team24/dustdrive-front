@@ -21,9 +21,9 @@
     </section>
     <section>
         <hr class="indicateGrade">
-        <span class="outCircle">
-            <span class="inCircle"></span>
+        <span class="outCircle five">
         </span>
+        <span class="inCircle five"></span>
     </section>
     <section class="five tip">
         <p>현재 운행 제한 조건에 해당하는 등급입니다.</p>
@@ -55,6 +55,13 @@
 
     section hr {
         z-index: 0;
+        width: 100%;
+        height: 0.3em;
+        background: #D9D9D9;
+        border-radius: 25px;
+        border: none;
+
+        margin-top: 2em;
     }
 
     .warn {
@@ -96,22 +103,37 @@
     }
 
     .outCircle {
+        display: block;
         z-index: 1;
+        height: 1em;
+        width: 1em;
+        padding: 2px;
+        position: absolute;
+
         background: var(--y-cal-warn-color);
+        border: solid 1px var(--y-cal-warn-color);
+        opacity: 0.6;
+        border-radius: 50%;
+
+        margin-top: -1.3em;
+        right: 0.6em;
     }
 
     .inCircle {
+        display: block;
         z-index: 2;
-    }
+        height: 0.5em;
+        width: 0.5em;
+        padding: 2px;
+        position: absolute;
 
-    .indicateGrade {
-        width: 100%;
-        height: 0.3em;
-        background: #D9D9D9;
-        border-radius: 25px;
-        border: none;
+        background: var(--y-cal-warn-color);
+        border: solid 1px var(--y-cal-warn-color);
+        opacity: 1.0;
+        border-radius: 50%;
 
-        margin-top: 2em;
+        margin-top: -1.05em;
+        right: 0.85em;
     }
 
     .gradeFiveLimits a {
