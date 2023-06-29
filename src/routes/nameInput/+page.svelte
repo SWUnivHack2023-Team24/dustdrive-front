@@ -17,7 +17,7 @@
 </svelte:head>
 
 <main in:fade>
-    <form method="POST" action="/main">
+    <form method="GET" action="/main">
         <input type="hidden" name="car" value={data.car} />
         <p></p>
         <div id="inputName">
