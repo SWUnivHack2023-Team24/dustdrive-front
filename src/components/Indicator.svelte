@@ -29,16 +29,16 @@
     span {
         display: inline-block;
         border-radius: 50%;
-        height: 3px;
-        width: 3px;
-        padding: 3px;
+        height: 2px;
+        width: 2px;
+        padding: 2px;
         border: solid 1px grey;
         background: grey;
         margin: 1em;
     }
 
     .current {
-        background: yellow;
-        border: solid 1px yellow;
+        background: #F07B3F;
+        border: solid 1px #F07B3F;
     }
 </style>
