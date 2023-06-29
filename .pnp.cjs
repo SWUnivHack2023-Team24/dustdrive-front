@@ -28,10 +28,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@event-calendar/core", "npm:1.5.0"],\
-            ["@event-calendar/day-grid", "npm:1.5.0"],\
             ["@sveltejs/adapter-auto", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:2.1.0"],\
             ["@sveltejs/kit", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:1.20.5"],\
+            ["fluent-svelte", "npm:1.6.0"],\
             ["svelte", "npm:4.0.0"],\
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
             ["svelte-gestures", "npm:1.5.2"],\
@@ -247,27 +246,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/@esbuild-win32-x64-npm-0.17.19-619fae7839/node_modules/@esbuild/win32-x64/",\
           "packageDependencies": [\
             ["@esbuild/win32-x64", "npm:0.17.19"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@event-calendar/core", [\
-        ["npm:1.5.0", {\
-          "packageLocation": "./.yarn/cache/@event-calendar-core-npm-1.5.0-0908818f7a-8a4df06f49.zip/node_modules/@event-calendar/core/",\
-          "packageDependencies": [\
-            ["@event-calendar/core", "npm:1.5.0"],\
-            ["svelte", "npm:3.59.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@event-calendar/day-grid", [\
-        ["npm:1.5.0", {\
-          "packageLocation": "./.yarn/cache/@event-calendar-day-grid-npm-1.5.0-613c9e9000-6be51188c0.zip/node_modules/@event-calendar/day-grid/",\
-          "packageDependencies": [\
-            ["@event-calendar/day-grid", "npm:1.5.0"],\
-            ["@event-calendar/core", "npm:1.5.0"],\
-            ["svelte", "npm:3.59.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1013,10 +991,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["dustdrive-front", "workspace:."],\
-            ["@event-calendar/core", "npm:1.5.0"],\
-            ["@event-calendar/day-grid", "npm:1.5.0"],\
             ["@sveltejs/adapter-auto", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:2.1.0"],\
             ["@sveltejs/kit", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:1.20.5"],\
+            ["fluent-svelte", "npm:1.6.0"],\
             ["svelte", "npm:4.0.0"],\
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
             ["svelte-gestures", "npm:1.5.2"],\
@@ -1178,6 +1155,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["fill-range", "npm:7.0.1"],\
             ["to-regex-range", "npm:5.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["fluent-svelte", [\
+        ["npm:1.6.0", {\
+          "packageLocation": "./.yarn/cache/fluent-svelte-npm-1.6.0-b51efa5efd-1b2ac33343.zip/node_modules/fluent-svelte/",\
+          "packageDependencies": [\
+            ["fluent-svelte", "npm:1.6.0"],\
+            ["focus-trap", "npm:6.9.4"],\
+            ["tabbable", "npm:5.3.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["focus-trap", [\
+        ["npm:6.9.4", {\
+          "packageLocation": "./.yarn/cache/focus-trap-npm-6.9.4-64b032bc16-0b4cebcc11.zip/node_modules/focus-trap/",\
+          "packageDependencies": [\
+            ["focus-trap", "npm:6.9.4"],\
+            ["tabbable", "npm:5.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2332,13 +2330,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["svelte", [\
-        ["npm:3.59.2", {\
-          "packageLocation": "./.yarn/cache/svelte-npm-3.59.2-a73aa43ac6-3e9d770292.zip/node_modules/svelte/",\
-          "packageDependencies": [\
-            ["svelte", "npm:3.59.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:4.0.0", {\
           "packageLocation": "./.yarn/cache/svelte-npm-4.0.0-2891d7edf3-6596672997.zip/node_modules/svelte/",\
           "packageDependencies": [\
@@ -2504,6 +2495,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/svelte",\
             "svelte"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tabbable", [\
+        ["npm:5.3.3", {\
+          "packageLocation": "./.yarn/cache/tabbable-npm-5.3.3-baf35cffe9-1aa56e1bb6.zip/node_modules/tabbable/",\
+          "packageDependencies": [\
+            ["tabbable", "npm:5.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
