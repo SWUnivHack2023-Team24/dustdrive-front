@@ -1,6 +1,5 @@
 <script>
     import { swipe } from "svelte-gestures";
-    import { goto } from "$app/navigation";
     import { fade } from "svelte/transition";
     import Indicator from "../components/Indicator.svelte";
 
@@ -31,8 +30,6 @@
         } else if (event.detail.direction === "left") {
             if (!isLastIndex(currentIndex - 1, splashes)) {
                 currentIndex++;
-            } else {
-                goto("carNumberInput");  
             }
         }
     }
@@ -75,8 +72,15 @@
     {#if currentIndex !== 0}
     <Indicator indicateLength={splashes} currentDot={currentIndex -1} />
     {/if}
+    
     {/key}
 </main>
+
+{#if currentIndex === 3}
+<footer>
+    <a href="/agreement" class="goNextButton">다음 단계 <img src="/icons/goNext.svg" alt="graphic"></a>
+</footer>
+{/if}
 
 <style>
     main {
@@ -86,7 +90,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 80vh;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        margin: 3.5em;
     }
 
     h1 {
@@ -122,5 +132,25 @@
 
     #splash {
         text-align: center;
+    }
+
+    .goNextButton {
+        font-weight: 700;
+        
+        background: #FFD460;
+        color: #FFFFFF;
+        border-radius: 2em;
+        text-decoration: none;
+
+        width: max-content;
+        height: fit-content;
+        padding: 0.7em 5em;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .goNextButton img {
+        margin-inline-start: 0.75em;
     }
 </style>
