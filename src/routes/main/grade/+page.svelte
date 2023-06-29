@@ -1,4 +1,5 @@
 <script>
+    import { navigating } from "$app/stores";
     import Header from "../../../components/Header.svelte";
 
     /** @type {import('./$types').PageServerData} */
@@ -21,9 +22,14 @@
     </section>
     <section>
         <hr class="indicateGrade">
+        {#if !$navigating}
         <span class="outCircle five">
         </span>
         <span class="inCircle five"></span>
+        <span class="gradeDrop">
+            <img src="/icons/gradeFive.png" />
+        </span>
+        {/if}
     </section>
     <section class="five tip">
         <p>현재 운행 제한 조건에 해당하는 등급입니다.</p>
@@ -134,6 +140,13 @@
 
         margin-top: -1.05em;
         right: 0.85em;
+    }
+
+    .gradeDrop {
+        z-index: 3;
+        position: absolute;
+        margin-top: -3.1em;
+        right: 0.6em;
     }
 
     .gradeFiveLimits a {
