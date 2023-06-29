@@ -780,6 +780,7 @@ __metadata:
     svelte: ^4.0.0
     svelte-check: ^3.4.3
     svelte-gestures: ^1.5.2
+    svelte-weather: ^0.3.6
     typescript: ^5.0.0
     vite: ^4.3.6
   languageName: unknown
@@ -2100,6 +2101,15 @@ __metadata:
     typescript:
       optional: true
   checksum: 2acd36ccdf5e8d624e753a3dbcd3ca947e87e01509ab3eb3d862551b4278ca684763baf87f0240eab1646c16b0d59fa82227079cce762908f29dd359d1ac69ca
+  languageName: node
+  linkType: hard
+
+"svelte-weather@npm:^0.3.6":
+  version: 0.3.6
+  resolution: "svelte-weather@npm:0.3.6"
+  peerDependencies:
+    svelte: ^3.54.0 || ^4.0.0
+  checksum: 0208414ce1237535ee6c9f40e69a85be43fb6fe9ea6196b1ed75783744a7e27be59a3cffb97b37277c15a06c635069a196534fe07cd2d516149162ba6ccf824d
   languageName: node
   linkType: hard
 

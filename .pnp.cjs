@@ -34,6 +34,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sveltejs/kit", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:1.20.5"],\
             ["svelte", "npm:4.0.0"],\
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
+            ["svelte-gestures", "npm:1.5.2"],\
+            ["svelte-weather", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6"],\
             ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"],\
             ["vite", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:4.3.9"]\
           ],\
@@ -1017,6 +1019,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sveltejs/kit", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:1.20.5"],\
             ["svelte", "npm:4.0.0"],\
             ["svelte-check", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:3.4.4"],\
+            ["svelte-gestures", "npm:1.5.2"],\
+            ["svelte-weather", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6"],\
             ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=77c9e2"],\
             ["vite", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:4.3.9"]\
           ],\
@@ -2386,6 +2390,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["svelte-gestures", [\
+        ["npm:1.5.2", {\
+          "packageLocation": "./.yarn/cache/svelte-gestures-npm-1.5.2-e35692b2d6-248b18c765.zip/node_modules/svelte-gestures/",\
+          "packageDependencies": [\
+            ["svelte-gestures", "npm:1.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["svelte-hmr", [\
         ["npm:0.15.2", {\
           "packageLocation": "./.yarn/cache/svelte-hmr-npm-0.15.2-2554f11b4c-bf1179de47.zip/node_modules/svelte-hmr/",\
@@ -2469,6 +2482,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "sugarss",\
             "svelte",\
             "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svelte-weather", [\
+        ["npm:0.3.6", {\
+          "packageLocation": "./.yarn/cache/svelte-weather-npm-0.3.6-2d9068a1e8-0208414ce1.zip/node_modules/svelte-weather/",\
+          "packageDependencies": [\
+            ["svelte-weather", "npm:0.3.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6", {\
+          "packageLocation": "./.yarn/__virtual__/svelte-weather-virtual-85b31b8b7a/0/cache/svelte-weather-npm-0.3.6-2d9068a1e8-0208414ce1.zip/node_modules/svelte-weather/",\
+          "packageDependencies": [\
+            ["svelte-weather", "virtual:7ad6010f81f586883a03e2e31fd29f92bc2ff00b38cfb786c6eabb0fc6ce723a9f36ccebf8b1187dfbb6acffe4a5586917bbf5959ecd4d325587802b24a163e0#npm:0.3.6"],\
+            ["@types/svelte", null],\
+            ["svelte", "npm:4.0.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/svelte",\
+            "svelte"\
           ],\
           "linkType": "HARD"\
         }]\
