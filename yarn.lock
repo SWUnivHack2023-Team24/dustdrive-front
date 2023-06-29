@@ -777,6 +777,7 @@ __metadata:
     "@event-calendar/day-grid": ^1.5.0
     "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.20.4
+    fluent-svelte: ^1.6.0
     svelte: ^4.0.0
     svelte-check: ^3.4.3
     svelte-gestures: ^1.5.2
@@ -965,6 +966,25 @@ __metadata:
   dependencies:
     to-regex-range: ^5.0.1
   checksum: cc283f4e65b504259e64fd969bcf4def4eb08d85565e906b7d36516e87819db52029a76b6363d0f02d0d532f0033c9603b9e2d943d56ee3b0d4f7ad3328ff917
+  languageName: node
+  linkType: hard
+
+"fluent-svelte@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "fluent-svelte@npm:1.6.0"
+  dependencies:
+    focus-trap: ^6.7.3
+    tabbable: ^5.2.1
+  checksum: 1b2ac33343f6e34469e4af9b31e0d446b021b3b2cd64f91b5b010fcf045abdbf7bb5910b9bc4ad90bd5020cf4293e23f625acb01addede3806eb0325514b727d
+  languageName: node
+  linkType: hard
+
+"focus-trap@npm:^6.7.3":
+  version: 6.9.4
+  resolution: "focus-trap@npm:6.9.4"
+  dependencies:
+    tabbable: ^5.3.3
+  checksum: 0b4cebcc11010bd9397731092bd59a981e838c710c6497374ba70571875a14ab27c0db7d60f36005ec01bdabc3b9cfeda11d30ddf5b8874596dcc95e18913b3b
   languageName: node
   linkType: hard
 
@@ -2138,6 +2158,13 @@ __metadata:
     magic-string: ^0.30.0
     periscopic: ^3.1.0
   checksum: 65966729971a0963b74f02afe83628ba171d7019a91ecdc5a020bc496716e6c2b4ea12782fd0f1c1e5d46464870ea3bbba68ebbe9e780e1bff24448a42451444
+  languageName: node
+  linkType: hard
+
+"tabbable@npm:^5.2.1, tabbable@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "tabbable@npm:5.3.3"
+  checksum: 1aa56e1bb617cc10616c407f4e756f0607f3e2d30f9803664d70b85db037ca27e75918ed1c71443f3dc902e21dc9f991ce4b52d63a538c9b69b3218d3babcd70
   languageName: node
   linkType: hard
 
