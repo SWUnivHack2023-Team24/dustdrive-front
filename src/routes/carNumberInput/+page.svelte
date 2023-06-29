@@ -10,6 +10,12 @@
     let carTypeCompleted = false;
 
     function nextCarInput(event) {
+        if (event.target.value !== "") {
+            event.target.setAttribute("style", "background: #FFD460; border: solid 1px #FFD460;");
+        } else {
+            event.target.removeAttribute("style");
+        }
+
         if (event.target.nextElementSibling.getAttribute("type") === "hidden") {
             carTypeField.focus();
         } else {
@@ -21,12 +27,15 @@
         if (Number(event.target.value)) {
             newCarOnlyField.setAttribute("type", "number");
             newCarOnlyField.value = Number(event.target.value);
+            newCarOnlyField.setAttribute("style", "background: #FFD460; border: solid 1px #FFD460;");
             event.target.value = "";
         } else if (carType.includes(event.target.value) && !carTypeCompleted) {
             carTypeCompleted = true;
             event.target.nextElementSibling.focus();
+            event.target.setAttribute("style", "background: #FFD460; border: solid 1px #FFD460;");
         } else {
-            carTypeCompleted = false;            
+            carTypeCompleted = false;
+            event.target.removeAttribute("style");
         }
     }
 
@@ -56,7 +65,7 @@
 
 <main>
     <section bind:this={inputCarStep} in:fade>
-        <p>노후 경유차, 아직 바꿀 수 없다면</p>
+        <p>차량번호를 입력하여주세요 :&#41;</p>
         <form bind:this={inputCarForm} class="inputCarForm" name="inputCar">
             <input name="carNumber" type="number" placeholder="1" maxlength="1" min="1" max="9" size="1" inputmode="numeric" on:input={nextCarInput} autofocus />
             <input name="carNumber" type="number" placeholder="2" maxlength="1" min="0" max="9" size="1" inputmode="numeric" on:input={nextCarInput} />
@@ -67,7 +76,6 @@
             <input name="carNumber" type="number" placeholder="7" maxlength="1" size="1" min="0" max="9" on:input={nextCarInput} inputmode="numeric" />
             <input name="carNumber" type="number" placeholder="8" maxlength="1" size="1" min="0" max="9" inputmode="numeric" on:input={joinInputAndSend}/>
         </form>
-        <p>차량 번호는 사용자 기기에만 저장되어요</p>
     </section>    
 </main>
 
@@ -75,26 +83,30 @@
 
     main {
         font-family: "Pretendard Variable", sans-serif;
+        font-weight: 600;
         
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 90vh;
+        height: 100vh;
     }
 
     section p {
         text-align: center;
+        margin-bottom: 3em;
     }
 
     .inputCarForm input {
         font-family: "Pretendard Variable", sans-serif;
 
         aspect-ratio: 1/2;
-        border-radius: 10px;
-        border: solid 1px gray;
+        background: #E8E8E8;
+        border-radius: 1.25rem;
+        border: solid 1px #E8E8E8;
         font-size: 2em;
         max-height: 2em;
+        text-align: center;
     }
 
     input[type='number'] {
