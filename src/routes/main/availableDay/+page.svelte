@@ -1,18 +1,14 @@
 <script>
     import { CalendarView } from "fluent-svelte";
     import "fluent-svelte/theme.css";
+    import Header from "../../../components/Header.svelte";
 </script>
 
 <svelte:head>
     <title>Yellow Calendar: 운행 가능일 확인</title>
 </svelte:head>
 
-<header>
-    <a href="/main">
-        <img src="/icons/goPreviousBlack.svg" alt="back button">
-    </a>
-    <h1>MY 옐로카 운행 가능 일정 확인하기</h1>
-</header>
+<Header headerTitle="MY 옐로카 운행 가능 일정 확인하기" />
 
 <main>
     <section class="tip">

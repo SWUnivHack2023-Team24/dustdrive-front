@@ -48,10 +48,12 @@
         </section>
     </section>
     <section id="myYellowCar" class="card">
-        <div>
-            <h2>MY 옐로카 등급 확인하러 가기</h2>
-            <p>내 차의 등급은 몇 등급일까?</p>    
-        </div>
+        <a href="/main/grade">
+            <div>
+                <h2>MY 옐로카 등급 확인하러 가기</h2>
+                <p>내 차의 등급은 몇 등급일까?</p>    
+            </div>
+        </a>
         <img src="/icons/location.svg" alt="graphic" />
         <img src="/icons/goNextOrange.svg" alt="graphic" />
     </section>
@@ -155,6 +157,10 @@
         background: #FFFFFF;
         border-radius: 1.4em;
         padding: 1em 1.4em;        
+    }
+
+    #myYellowCar a {
+        text-decoration: none;
     }
 
     #myYellowCar h2 {
