@@ -62,6 +62,9 @@
     <title>Yellow Calendar: 차량 번호 입력하기</title>
 </svelte:head>
 
+<header>
+    <h1>YELLOW CALENDAR</h1>
+</header>
 
 <main>
     <section bind:this={inputCarStep} in:fade>
@@ -80,6 +83,13 @@
 </main>
 
 <style>
+    header {
+        display: flex;
+        justify-content: center;
+        margin-top: 6em;
+        height: 12vh;
+
+    }
 
     main {
         font-family: "Pretendard Variable", sans-serif;
@@ -89,12 +99,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 60vh;
     }
 
     section p {
         text-align: center;
         margin-bottom: 3em;
+    }
+
+    h1 {
+        color: #FFD460;
+        font-weight: 700;
     }
 
     .inputCarForm input {
