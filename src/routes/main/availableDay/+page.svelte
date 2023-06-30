@@ -2,6 +2,27 @@
     import { CalendarView } from "fluent-svelte";
     import "fluent-svelte/theme.css";
     import Header from "../../../components/Header.svelte";
+
+    /** @type {import('./$types').PageData} */
+    export let data;
+    const badFineDust = [];
+    const normalFineDust = [];
+
+    for(let i = 0; i < data.dusts.length; i++) {
+        for (let j = 0; j < data.dusts[i].data.length; j++) {
+            switch (data.dusts[i].data[j]["dust_info"]) {
+                case "normal":
+                    normalFineDust.push(new Date(data.dusts[i].data[j].date));
+                    break;
+                case "bad":
+                case "worst":
+                    badFineDust.push(new Date(data.dusts[i].data[j].date));
+                    break;
+            }
+        }
+    }
+
+    console.log(data);
 </script>
 
 <svelte:head>
@@ -16,8 +37,8 @@
     </section>
     <section id="calendar">
         <CalendarView
-            value={new Date(2023, 5, 29)}
-            blackout={[new Date(2023, 5, 15), new Date(2023, 5, 27)]} 
+            value={normalFineDust}
+            blackout={badFineDust} 
         />
         <p><span class="normal"/>보통 <span class="bad"/>나쁨</p>
     </section>
