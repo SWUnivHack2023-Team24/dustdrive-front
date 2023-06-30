@@ -10,7 +10,7 @@
     let markerImage = null;
     let marker = null;
 
-    onMount(async() => {
+    function attachMap() {
         const container = document.getElementById("map"),
         options = {
             center: new kakao.maps.LatLng(35.41552,127.87339),
@@ -52,12 +52,12 @@
                 image: markerImage
             });
         }
-    });
+    }
 </script>
 
 <svelte:head>
     <title>Yellow Calendar: 절대 불가 지역</title>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={kakaoMapKey}"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={kakaoMapKey}" on:load={attachMap()}></script>
 </svelte:head>
 
 <Header headerTitle="{data.name}님 절대 불가 지역을 안내드려요" backMenu="/main/availableDay" />
