@@ -1,6 +1,5 @@
 <script>
     import Header from "../../../components/Header.svelte";
-    import { onMount } from "svelte";
 
     const kakaoMapKey = import.meta.env.VITE_KAKAO_JS_KEY;
     const kakaoConvertKey = import.meta.env.VITE_KAKAO_REST_KEY;
