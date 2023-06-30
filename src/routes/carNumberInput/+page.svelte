@@ -72,7 +72,7 @@
         <form bind:this={inputCarForm} class="inputCarForm" name="inputCar">
             <input name="carNumber" type="number" placeholder="1" maxlength="1" min="1" max="9" size="1" inputmode="numeric" on:input={nextCarInput} autofocus />
             <input name="carNumber" type="number" placeholder="2" maxlength="1" min="0" max="9" size="1" inputmode="numeric" on:input={nextCarInput} />
-            <input bind:this={newCarOnlyField} name="carNumber" type="hidden" min="0" max="9" size="1" placeholder="3" maxlength="1" inputmode="numeric" on:input={oldCarSign} />
+            <input bind:this={newCarOnlyField} name="carNumber" type="hidden" min="0" max="9" size="1" placeholder="3" maxlength="1" inputmode="numeric" value="" on:input={oldCarSign} />
             <input bind:this={carTypeField} name="carNumber" type="text" placeholder="가" size="1" maxlength="1" on:input={newCarSign} />
             <input name="carNumber" type="number" placeholder="5" maxlength="1" size="1" min="1" max="9" on:input={nextCarInput} inputmode="numeric" />
             <input name="carNumber" type="number" placeholder="6" maxlength="1" size="1" min="0" max="9" on:input={nextCarInput} inputmode="numeric" />

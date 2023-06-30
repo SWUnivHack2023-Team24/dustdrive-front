@@ -1,13 +1,95 @@
 <script>
     import { Dust } from "svelte-weather";
+    import { onMount } from "svelte";
 
+    const kakaoConvertKey = import.meta.env.VITE_KAKAO_REST_KEY;
     const today = new Date(Date.now());
     const date = {
         0: "일", 1: "월", 2: "화", 3: "수", 4: "목", 5: "금", 6: "토"
     }
 
+    let locationKeyword = undefined;
+    let city = undefined;
+    let celcius = undefined;
+    let dustInfo = undefined;
+    let dustStep = "심각";
+    let driveAvailable = false;
+
     /** @type {import('./$types').PageServerData} */
     export let data;
+
+    onMount(async() => {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(async ({ coords }) => {
+                const addressData = await fetch(`https://dapi.kakao.com/v2/local/geo/coord2regioncode.JSON?x=${coords.longitude}&y=${coords.latitude}`, {
+                    headers: {
+                        "Authorization": `KakaoAK ${kakaoConvertKey}`
+                    }
+                });
+                const address = await addressData.json();
+
+                const weather = await fetch(`https://api.dustdrive.info/api/v1/weather`, {
+                    method: "POST",
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: `{
+                        "lon": ${coords.longitude},
+                        "lat": ${coords.latitude}
+                    }`
+                })
+                const weatherInfo = await weather.json();
+                celcius = (weatherInfo.temperature - 273.15).toFixed(1);
+
+                locationKeyword = [address.documents[0]["region_1depth_name"], address.documents[0]["region_2depth_name"].split(" ")[0]].join(" ");
+                city = address.documents[0]["region_2depth_name"].split(" ")[0];
+
+                const dust = await fetch(`https://api.dustdrive.info/api/v1/dust/realtime`, {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: `{
+                        "fuelEffRank": ${data.rank},
+                        "address": "${locationKeyword}"
+                    }`
+                });
+                dustInfo = await dust.json();
+                
+                const root = document.documentElement;
+                switch(dustInfo.data["dust_info"]) {
+                    case "clean":
+                        dustStep = "맑음"
+                        driveAvailable = true;
+                        root.style.setProperty("--yc-finedust-status", "#367AFF");
+                        break;
+                    case "normal":
+                        dustStep = "보통"
+                        driveAvailable = true;
+                        root.style.setProperty("--yc-finedust-status", "#FFD460");
+                        break;
+                    case "bad":
+                        dustStep = "심각"
+                        driveAvailable = false;
+                        root.style.setProperty("--yc-finedust-status", "#FF8141");
+                        break;
+                    case "worst":
+                        dustStep = "최악"
+                        driveAvailable = false;
+                        root.style.setProperty("--yc-finedust-status", "#DD341D");
+                        break;        
+                }
+            }, (error) => {
+                console.log(error);
+            }, {
+                enableHighAccuracy: true,
+                maximumAge: 10000,
+                timeout: 5000
+            });
+        }
+    })
 </script>
 
 <svelte:head>
@@ -21,15 +103,15 @@
 <main>
     <section id="carInfo">
         <h2>
-            <span class="name">{data.name}</span> 님의 <span class="primary">옐로카</span>
+            <span class="name">{data.name}</span> 님의 <span class="primary">YELLOWCAR</span>
         </h2>
         <div id="carNumber">
             {data.car}
         </div>
         <ul>
-            <li><span class="carInfoCategory">모델명</span> {data.model}</li>
-            <li><span class="carInfoCategory">연식</span> {data.year}</li>
-            <li><span class="carInfoCategory">디젤</span> {data.engine}</li>
+            <li><span class="carInfoCategory">모델명</span> {data.carModel}</li>
+            <li><span class="carInfoCategory">연식</span> {data.year}년도</li>
+            <li><span class="carInfoCategory">엔진</span> 디젤</li>
         </ul>
     </section>
     <section id="weatherBanner">
@@ -37,28 +119,28 @@
             <div id="weatherLocation">
                 <p>{today.getFullYear()}년 {today.getMonth() + 1}월 {today.getDate()}일 {date[today.getDay()]}</p>
                 <h2>
-                    충청남도 천안시
+                    {locationKeyword ?? "충청남도 천안시"}
                     <Dust color="#FFFFFF" size="2em" />
                 </h2>
             </div>
-            <p id="weatherCelcius">25.5°C</p>
+            <p id="weatherCelcius">{celcius ?? "25.5"}°C</p>
         </section>
         <section id="weatherNoticeBanner">
-            <p id="weatherNotice">현재 천안시는 <span class="finedust_veryHigh">미세먼지 심각 단계</span>이므로<br> 옐로카 운행이 불가합니다.</p>
+            <p id="weatherNotice">현재 {city ?? "천안시"}는 <span class="finedust">미세먼지 {dustStep} 단계</span>이므로<br> 옐로카 운행이 {driveAvailable ? "가능" : "불가"}합니다.</p>
         </section>
     </section>
     <section id="myYellowCar" class="card">
-        <a href="/main/grade">
+        <a href="/main/grade?grade={data.rank}">
             <div>
                 <h2>MY 옐로카 등급 확인하러 가기</h2>
-                <p>내 차의 등급은 몇 등급일까?</p>    
+                <p>내 차의 등급은 몇 등급일까?</p>
             </div>
         </a>
         <img src="/icons/location.svg" alt="graphic" />
         <img src="/icons/goNextOrange.svg" alt="graphic" />
     </section>
     <section id="operateInfo">
-        <a href="/main/availableDay" id="operateDay" class="card">
+        <a href="/main/availableDay?region={locationKeyword ?? "충청남도 천안시"}" id="operateDay" class="card">
             <div>
                 <p>
                     MY 옐로카<br>
@@ -116,8 +198,8 @@
         color: #F07B3F;
     }
 
-    .finedust_veryHigh {
-        color: #F07B3F;
+    .finedust {
+        color: var(--yc-finedust-status, #F07B3F);
         text-decoration: underline;
         font-weight: 700;
     }
@@ -228,7 +310,7 @@
     }
 
     #weather {
-        background: #F05F3F;
+        background: var(--yc-finedust-status, #F07B3F);
         color: #FFFFFF;
 
         border-radius: 1.4em;
