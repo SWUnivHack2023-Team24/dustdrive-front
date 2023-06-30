@@ -11,7 +11,7 @@
     let marker = null;
     let locationKeyword = null
 
-    onMount(async() => {
+    function attachMap() {
         const container = document.getElementById("map"),
         options = {
             center: new kakao.maps.LatLng(36.81505,127.11395),
@@ -81,12 +81,12 @@
                 timeout: 5000
             });
         }
-    });
+    }
 </script>
 
 <svelte:head>
     <title>Yellow Calendar: 수리센터 찾기</title>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={kakaoMapKey}"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={kakaoMapKey}" on:load={attachMap()}></script>
 </svelte:head>
 
 <Header headerTitle="MY 옐로카 수리센터 찾기" backMenu="/main" />

@@ -11,6 +11,13 @@
     let marker = null;
 
     onMount(async() => {
+        const container = document.getElementById("map"),
+        options = {
+            center: new kakao.maps.LatLng(35.41552,127.87339),
+            level: 13
+        };
+
+        const map = new kakao.maps.Map(container, options);
         const positions = [
             {
                 title: '서울특별시', 
@@ -33,14 +40,6 @@
                 loc: new kakao.maps.LatLng(35.1727,129.0797)
             }
         ];
-
-        const container = document.getElementById("map"),
-        options = {
-            center: new kakao.maps.LatLng(35.41552,127.87339),
-            level: 13
-        };
-
-        const map = new kakao.maps.Map(container, options);
 
         for (let i = 0; i < positions.length; i++) {
 
